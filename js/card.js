@@ -91,18 +91,12 @@ function afterMove() {
 function checkWin() {
   if (remainingMatches == 0) {
     clearInterval(timer);
-    let minutes = $('minutes').text();
-    let seconds = $('seconds').text();
-    $('.deck').empty();
-    $('.deck').append(
-    `
-    <div class="win-screen">
-      <h1>Congratulations!</h1>
-      <p>Solved with ${moves} moves in ${minutes}:${seconds}</p>
-      <p class="restart" onclick="initGame()">
-        <i class="fa fa-repeat"></i>
-      </p>
-    </div>
-    `);
+
+    $('.modal-body').empty();
+    $('.stars').clone().appendTo('.modal-body');
+    let minutes = $('#minutes').text();
+    let seconds = $('#seconds').text();
+    $('.modal-body').append(`<p>Solved with ${moves} moves in ${minutes}:${seconds}</p>`);
+    $('#win-modal').modal();
   }
 }

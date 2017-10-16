@@ -26,4 +26,4 @@ Above of the cards there's the score panel. It shows:
 
 ## Dependencies
 
-The game uses JQuery for HTML manipulation
+The game uses JQuery (from CDN) & Bootstrap (.min files)
